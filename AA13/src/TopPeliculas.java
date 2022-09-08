@@ -16,7 +16,7 @@ public class TopPeliculas {
 		File top11to20 = new File("Peliculas_11_20.txt");
 		Scanner sn = new Scanner(top11to20);
 		
-		File top20 = new File("Top20.txt");
+		File top20 = new File("top20_mejores_peliculas.txt");
 		
 		listaPeliculas.add(new Pelicula("Titanic", 2201647264L));
 		listaPeliculas.add(new Pelicula("Avatar", 2847397339L));
@@ -61,8 +61,31 @@ public class TopPeliculas {
 		fw.close();
 		sn.close();
 		
+		crearJenkins();
+		
 		System.out.println("Lista ordenada y actualizada con éxito!");
 		
+	}
+	
+	public static void crearJenkins() throws IOException {
+		
+		
+		FileWriter fw = new FileWriter(new File("Jenkinsfile.txt"));
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		bw.write("pipeline{\n");
+		bw.write("	agent any\n");
+		bw.write("  stages{\n");
+		bw.write("		stage('Saludar'){\n");
+		bw.write("        steps{\n");
+		bw.write("          echo   'hola mundo'  \n");
+		bw.write("        				}\n");
+		bw.write("        		}\n");
+		bw.write("        }\n");
+		bw.write("}\n");
+		
+		bw.close();
+		fw.close();
 	}
 
 }
