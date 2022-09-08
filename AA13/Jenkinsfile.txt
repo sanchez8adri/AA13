@@ -1,10 +1,10 @@
 pipeline{
 	agent any
-  stages{
+  	stages{
 		stage('Saludar'){
-        steps{
-          echo   'hola mundo'  
-        				}
-        		}
+       				steps{
+          				echo   'hola mundo'  
+				}
+		}
         }
 }
