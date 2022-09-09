@@ -92,7 +92,6 @@ public class TopPeliculas {
         Jenkins.append("} \r\n");
         Jenkins.append("} \r\n");
 
-        System.out.println(Jenkins.toString());	
         bw.write(Jenkins.toString());
 		bw.close();
 		fw.close();
