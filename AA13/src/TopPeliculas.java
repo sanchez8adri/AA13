@@ -70,7 +70,7 @@ public class TopPeliculas {
 	public static void crearJenkins() throws IOException {
 		
 		
-		FileWriter fw = new FileWriter(new File("Jenkinsfile.txt"));
+		FileWriter fw = new FileWriter(new File("Jenkinsfile"));
 		BufferedWriter bw = new BufferedWriter(fw);
 		
 		StringBuilder Jenkins = new StringBuilder();
