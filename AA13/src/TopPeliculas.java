@@ -78,12 +78,12 @@ public class TopPeliculas {
         Jenkins.append("pipeline{\r\n");
         Jenkins.append("agent any \r\n");
         Jenkins.append("stages{ \r\n");
-        Jenkins.append("stage('Main'){ \r\n");
+        Jenkins.append("stage('Fecha de hoy'){ \r\n");
         Jenkins.append("steps{ \r\n");
         Jenkins.append("script{ \r\n");
         Jenkins.append("def fecha = LocalDate.now() \r\n");
-        Jenkins.append("def texto = 'Hola Mundo! EL día de hoy es elDia ' + fecha.getDayOfWeek() + '.' \r\n");
-        Jenkins.append("def texto2 = ' Este curso me hizo programar mas de lo que me hubiese gustado ' \r\n");
+        Jenkins.append("def texto = 'Hola Mundo! EL día de hoy es el ' + fecha.getDayOfWeek() + '.' \r\n");
+        Jenkins.append("def texto2 = 'Este curso me hizo programar mas de lo que me hubiese gustado' \r\n");
         Jenkins.append("println texto \r\n");
         Jenkins.append("println texto2 \r\n");
         Jenkins.append("} \r\n");
