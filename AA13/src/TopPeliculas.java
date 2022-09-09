@@ -73,17 +73,26 @@ public class TopPeliculas {
 		FileWriter fw = new FileWriter(new File("Jenkinsfile.txt"));
 		BufferedWriter bw = new BufferedWriter(fw);
 		
-		bw.write("pipeline{\n");
-		bw.write("	agent any\n");
-		bw.write("  stages{\n");
-		bw.write("		stage('Saludar'){\n");
-		bw.write("        steps{\n");
-		bw.write("          echo   'hola mundo'  \n");
-		bw.write("        				}\n");
-		bw.write("        		}\n");
-		bw.write("        }\n");
-		bw.write("}\n");
-		
+		StringBuilder Jenkins = new StringBuilder();
+        Jenkins.append("import java.time.LocalDate\r\n");
+        Jenkins.append("pipeline{\r\n");
+        Jenkins.append("agent any \r\n");
+        Jenkins.append("stages{ \r\n");
+        Jenkins.append("stage('Main'){ \r\n");
+        Jenkins.append("steps{ \r\n");
+        Jenkins.append("script{ \r\n");
+        Jenkins.append("def fecha = LocalDate.now() \r\n");
+        Jenkins.append("def texto = 'Hola Mundo! EL día de hoy es elDia ' + fecha.getDayOfWeek() + '.' \r\n");
+        Jenkins.append("def texto2 = ' Este curso me hizo programar mas de lo que me hubiese gustado ' \r\n");
+        Jenkins.append("println texto \r\n");
+        Jenkins.append("println texto2 \r\n");
+        Jenkins.append("} \r\n");
+        Jenkins.append("} \r\n");
+        Jenkins.append("} \r\n");
+        Jenkins.append("} \r\n");
+        Jenkins.append("} \r\n");
+
+        bw.write(Jenkins.toString());
 		bw.close();
 		fw.close();
 	}
